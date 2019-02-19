@@ -138,6 +138,9 @@ public class Settings implements DataObject {
     @ConfigEntry(path = "island.confirmation.commands.reset")
     private boolean resetConfirmation = true;
 
+    @ConfigEntry(path = "island.confirmation.commands.expel", since = "1.3.0")
+    private boolean expelConfirmation = true;
+
     @ConfigComment("These set the minimum and maximum size of a name.")
     @ConfigEntry(path = "island.name.min-length")
     private int nameMinLength = 4;
@@ -357,6 +360,20 @@ public class Settings implements DataObject {
 
     public void setResetConfirmation(boolean resetConfirmation) {
         this.resetConfirmation = resetConfirmation;
+    }
+
+    /**
+     * @since 1.3.0
+     */
+    public boolean isExpelConfirmation() {
+        return expelConfirmation;
+    }
+
+    /**
+     * @since 1.3.0
+     */
+    public void setExpelConfirmation(boolean expelConfirmation) {
+        this.expelConfirmation = expelConfirmation;
     }
 
     public int getNameMinLength() {
